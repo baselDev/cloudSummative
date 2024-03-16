@@ -8,13 +8,13 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install any dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy the content of the local src directory to the working directory
 COPY . .
 
 # Expose the port that your app runs on
-EXPOSE 8000
+EXPOSE 5000/tcp
 
 # Command to run the application
-CMD ["python", "wagglyapi.py"]
+CMD ["python", "./app.py"]
